@@ -41,33 +41,33 @@ int main() {
 			scanf("%d", &n[i][j]);
 		}
 	}
-    int t_c = 0, t_r = 0; // total capacity and total requirement init 0
+	int t_c = 0, t_r = 0; // total capacity and total requirement init 0
 	printf("\nEnter Capacity: ");
 	for(i=0; i<o; i++) {
 		scanf("%d", &c[i]);
-        t_c = t_c + c[i];
+		t_c = t_c + c[i];
 	}
 	printf("\nEnter Requirements: ");
 	for(i=0; i<d; i++) {
 		scanf("%d", &r[i]);
-        t_r = t_r + r[i];
+		t_r = t_r + r[i];
 	}
-    // unstable
-    if (t_c > t_r) {
-        printf("Unstable Matrix: Capacity greater than Requirement");
-        for(i=0; i<o; i++) {
-            n[i][d] = 0;
-        }
-        r[d] = t_c - t_r;
-        d++;
-    } else if (t_c < t_r) {
-        printf("Unstable Matrix: Requirement greater than Capacity");
-        for(i=0; i<d; i++) {
-            n[o][i] = 0;
-        }
-        c[o] = t_r - t_c;
-        o++;
-    }
+	// unstable
+	if (t_c > t_r) {
+		printf("Unstable Matrix: Capacity greater than Requirement");
+		for(i=0; i<o; i++) {
+			n[i][d] = 0;
+		}
+		r[d] = t_c - t_r;
+		d++;
+	} else if (t_c < t_r) {
+		printf("Unstable Matrix: Requirement greater than Capacity");
+		for(i=0; i<d; i++) {
+			n[o][i] = 0;
+		}
+		c[o] = t_r - t_c;
+		o++;
+	}
 	int x=0,y=0; //origin and destination coordinates
 	Node *head = NULL;
 	Node *last = NULL;
@@ -105,8 +105,8 @@ int main() {
 			node->value = r[y];
 			node->x = x;
 			node->y = y;
-            x++;
-            y++;
+			x++;
+			y++;
 			if(last) {
 				last->next = node;
 				last = last->next;
