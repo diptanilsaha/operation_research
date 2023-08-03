@@ -1,4 +1,4 @@
-// Matrix Minima/Least Cost Method - Transportation Method
+// Matrix Minima/Least Cost Method - Transportation Problem
 
 #include <stdio.h>
 #include <stdlib.h>
