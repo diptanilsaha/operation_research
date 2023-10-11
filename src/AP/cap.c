@@ -23,7 +23,7 @@ void print_matrix(float matrix[20][20], int n) {
 
 void print_final_matrix(float matrix[20][20], int n, int sign_matrix[20][20]) {
     int i, j;
-    printf("\n");
+    printf("\nFinal Matrix");
     for(i=0; i<n; i++) {
         for(j=0; j<n; j++) {
             printf("\t%.2f", matrix[i][j]);
@@ -93,6 +93,9 @@ int main() {
             diff = rmatrix[j][0] - dmatrix[i][1];
             if(diff <= layover) {
                 diff = diff + 24;
+                if (diff <= layover) {
+                    diff = diff + 24;
+                }
             }
             matrix1[i][j] = diff;
         }
@@ -103,6 +106,9 @@ int main() {
             diff = dmatrix[i][0] - rmatrix[j][1];
             if(diff <= layover) {
                 diff = diff + 24;
+                if (diff <= layover) {
+                    diff = diff + 24;
+                }
             }
             matrix2[i][j] = diff;
         }
